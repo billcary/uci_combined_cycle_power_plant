@@ -85,6 +85,9 @@ Heysem Kaya, Pınar Tüfekci , Sadık Fikret Gürgen: Local and Global Learning 
 ## Random Forest model
 
 
+## GBM model
+
+
 ## Tensor Flow NN model using Keras
 
 
@@ -93,13 +96,36 @@ Heysem Kaya, Pınar Tüfekci , Sadık Fikret Gürgen: Local and Global Learning 
 ## Run predictions for each model against test set
 ## ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+## Linear regression model
+
+
+## Random Forest model
+
+
+## GBM model
+
+
+## Tensor Flow NN model using Keras
 
 
 ## ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ## Performance diagnostics for each model
 ## ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+## For each nmodel, calculate RMSLE and plot target vs. actual values as well
+## as plot of residuals
 
+
+## Linear regression model
+
+
+## Random Forest model
+
+
+## GBM model
+
+
+## Tensor Flow NN model using Keras
 
 ## ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ## Save the models for future use
