@@ -54,12 +54,17 @@ Heysem Kaya, Pınar Tüfekci , Sadık Fikret Gürgen: Local and Global Learning 
 ## ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ## Load required libraries
 ## ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
+from keras.models import Sequential
+from keras.layers import Dense
+from keras.wrappers.scikit_learn import KerasClassifier
+from sklearn.cross_validation import StratifiedKFold
+from sklearn.cross_validation import cross_val_score
+import numpy
 
 ## ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ## Import Data from Filesystem
 ## ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
+dataset = numpy.loadtxt("./data/Folds5x2_pp.csv", delimiter=",")
 
 
 ## ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -68,11 +73,21 @@ Heysem Kaya, Pınar Tüfekci , Sadık Fikret Gürgen: Local and Global Learning 
 
 ## Log transform features and target variable
 
+# split into input (X) and output (Y) variables
+X = dataset[:,0:3]
+Y = dataset[:,3]
+
 
 ## ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-## Create training/test split
+## Prepare 10-fold cross validation
 ## ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+# fix random seed for reproducibility
+seed = 7
+numpy.random.seed(seed)
+
+# prepare kfold object
+kfold = StratifiedKFold(y=Y, n_folds=10, shuffle=True, random_state=seed)
 
 
 ## ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
