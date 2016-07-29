@@ -54,17 +54,22 @@ Heysem Kaya, Pınar Tüfekci , Sadık Fikret Gürgen: Local and Global Learning 
 ## ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ## Load required libraries
 ## ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+import numpy
+import pandas
 from keras.models import Sequential
 from keras.layers import Dense
 from keras.wrappers.scikit_learn import KerasClassifier
-from sklearn.cross_validation import StratifiedKFold
+from keras.utils import np_utils
 from sklearn.cross_validation import cross_val_score
-import numpy
+from sklearn.cross_validation import KFold
+from sklearn.preprocessing import LabelEncoder
+from sklearn.pipeline import Pipeline
 
 ## ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ## Import Data from Filesystem
 ## ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-dataset = numpy.loadtxt("./data/Folds5x2_pp.csv", delimiter=",")
+dataframe = pandas.read_csv("./data/Folds5x2_pp.csv", delim_whitespace=False, header='infer')
+dataset = dataframe.values
 
 
 ## ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
